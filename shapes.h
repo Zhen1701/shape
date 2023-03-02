@@ -7,7 +7,7 @@
 class Shape {
 public:
 	Shape(double a = 0, double b = 0) {
-		width = a; height = b;
+		width = a; height = b; 
 	}
 	~Shape() {}
 
@@ -32,5 +32,25 @@ public:
 		return (width * height);
 	}
 };
+
+class Triangle : public Shape {
+public:
+	Triangle(double a = 0, double b = 0) :Shape(a, b) { }
+
+	double area() {
+		return (width * height * 0.5);
+	}
+};
+
+class Circle : public Shape {
+public:
+	Circle(double a = 0, double b = 0) :Shape(a, b) { }
+
+	double area() {
+		return (PI * width * width);
+	}
+};
+
+
 
 #endif

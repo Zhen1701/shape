@@ -12,7 +12,8 @@ const char *usage = "Usage: a.out [type] [num1] [num2] \n"
 int main(int argc, char *argv[]) 
 {
 	double num1 = 0, num2 = 0;
-
+    char *usage;
+	
 	if (argc < 3) {
 	    cout << usage << endl;
 	    return -1;
@@ -24,19 +25,16 @@ int main(int argc, char *argv[])
 
 	Shape *shape;
 	Rectangle rect;
-	/**** Uncomment the code after you create class Circle and Triangle in shapes.h
 	Circle circle;
 	Triangle triangle;
-	****/
+	
 
     if (strcmp(argv[1], "rectangle") == 0)
 		shape = &rect;
-	/**** Uncomment the code after you create class Circle and Triangle in shapes.h
 	else if (strcmp(argv[1], "triangle") == 0)
 		shape = &triangle;
 	else if (strcmp(argv[1], "circle") == 0)
 		shape = &circle;
-	*****/
 	else {
 		cout << "Error! Unknown shape type" << endl;
 		return -2;
@@ -47,6 +45,8 @@ int main(int argc, char *argv[])
 	
 	// Print the area of the object.
 	cout << shape->area() << endl;
+
+
 
 	return 0;
 }
